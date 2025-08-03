@@ -5,7 +5,7 @@
 		<classes>
 			<!-- <class name="tests.smoke.LoginTest" />-->
 			<class name="tests.smoke.SignUpTest" />
-			<!-- <class name="tests.smoke.AddToCartTest" />-->
+			<!--<class name="tests.smoke.AddToCartTest" />-->
 		</classes>
 	</test> <!--
 	Test -->

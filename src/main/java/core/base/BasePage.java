@@ -39,10 +39,10 @@ public class BasePage {
 		Select dropdown = new Select(driver.findElement(locator));
 		dropdown.selectByValue(value);
 	}
-	
+
 	protected void scrollToElement(By locator) {
-	    WebElement element = driver.findElement(locator);
-	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		WebElement element = driver.findElement(locator);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 	}
 
 }

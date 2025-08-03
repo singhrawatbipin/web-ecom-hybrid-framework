@@ -2,6 +2,8 @@ package pages;
 
 import core.base.BasePage;
 import org.openqa.selenium.By;
+
+import utils.common.PopUpUtil;
 import utils.waitutils.WaitUtil;
 
 public class SignUpPage extends BasePage {
@@ -32,6 +34,7 @@ public class SignUpPage extends BasePage {
 	private By cityInput = By.xpath("//input[@data-qa='city']");
 	private By zipcodeInput = By.xpath("//input[@data-qa='zipcode']");
 	private By mobileInput = By.xpath("//input[@data-qa='mobile_number']");
+	private By popUpFrame = By.id("aswift_1");
 
 	public void goToSignupPage() {
 		click(loginLink);
@@ -50,6 +53,8 @@ public class SignUpPage extends BasePage {
 		selectDropdownByValue(daysDropdown, "1");
 		selectDropdownByValue(monthsDropdown, "1");
 		selectDropdownByValue(yearsDropdown, "2000");
+
+		PopUpUtil.closeIframeIfPresent(driver.findElement(popUpFrame).getDomAttribute("id"));
 
 		// Optional: Newsletter & Offers checkboxes (if present)
 		By newsletterCheckbox = By.id("newsletter");

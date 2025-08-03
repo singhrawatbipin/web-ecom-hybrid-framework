@@ -11,23 +11,29 @@ import java.time.Duration;
 
 public class WaitUtil {
 
-    private static final int DEFAULT_TIMEOUT = 20;
+	private static final int DEFAULT_TIMEOUT = 20;
 
-    public static WebElement waitForElementToBeVisible(By locator) {
-        WebDriver driver = DriverManager.getDriver();
-        return new WebDriverWait(driver, Duration.ofSeconds(DEFAULT_TIMEOUT))
-                .until(ExpectedConditions.visibilityOfElementLocated(locator));
-    }
+	public static WebElement waitForElementToBeVisible(By locator) {
+		WebDriver driver = DriverManager.getDriver();
+		return new WebDriverWait(driver, Duration.ofSeconds(DEFAULT_TIMEOUT))
+				.until(ExpectedConditions.visibilityOfElementLocated(locator));
+	}
 
-    public static WebElement waitForElementToBeClickable(By locator) {
-        WebDriver driver = DriverManager.getDriver();
-        return new WebDriverWait(driver, Duration.ofSeconds(DEFAULT_TIMEOUT))
-                .until(ExpectedConditions.elementToBeClickable(locator));
-    }
+	public static WebElement waitForElementToBeClickable(By locator) {
+		WebDriver driver = DriverManager.getDriver();
+		return new WebDriverWait(driver, Duration.ofSeconds(DEFAULT_TIMEOUT))
+				.until(ExpectedConditions.elementToBeClickable(locator));
+	}
 
-    public static boolean waitForUrlContains(String partialUrl) {
-        WebDriver driver = DriverManager.getDriver();
-        return new WebDriverWait(driver, Duration.ofSeconds(DEFAULT_TIMEOUT))
-                .until(ExpectedConditions.urlContains(partialUrl));
-    }
+	public static boolean waitForUrlContains(String partialUrl) {
+		WebDriver driver = DriverManager.getDriver();
+		return new WebDriverWait(driver, Duration.ofSeconds(DEFAULT_TIMEOUT))
+				.until(ExpectedConditions.urlContains(partialUrl));
+	}
+
+	public static void waitForIframeToBePresent(String iframeId) {
+		WebDriver driver = DriverManager.getDriver();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(DEFAULT_TIMEOUT));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(iframeId)));
+	}
 }
