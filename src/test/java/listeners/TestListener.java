@@ -3,6 +3,9 @@ package listeners;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
+
+import core.base.BaseTest;
+
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -18,6 +21,7 @@ public class TestListener implements ITestListener {
 	public void onTestStart(ITestResult result) {
 		ExtentTest test = extent.createTest(result.getMethod().getMethodName());
 		testThread.set(test);
+		((BaseTest) result.getInstance()).extentTest = test; // Required for BaseTest
 	}
 
 	@Override

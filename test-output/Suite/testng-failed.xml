@@ -7,7 +7,7 @@
         <methods>
           <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="createNewUser"/>
+          <include name="verifySignupWithExcelData" invocation-numbers="0 1"/>
         </methods>
       </class> <!-- tests.smoke.SignUpTest -->
     </classes>

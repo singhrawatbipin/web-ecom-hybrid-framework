@@ -43,8 +43,8 @@ public class SignUpPage extends BasePage {
 		click(signupButton);
 	}
 
-	public void fillRegistrationForm(String password, String firstName, String lastName, String company, String address)
-			throws InterruptedException {
+	public void fillRegistrationForm(String password, String firstName, String lastName, String company,
+			String address) {
 		click(titleMr);
 		type(passwordInput, password);
 		selectDropdownByValue(daysDropdown, "1");
